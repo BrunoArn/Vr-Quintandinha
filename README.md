@@ -1,2 +1,1 @@
-# Tactical-Rpg
-Studying Tactical Rpg genre.
+# Vr Quintandinha
