@@ -17,6 +17,8 @@ public class WornVr : MonoBehaviour
     private void Update()
     {
         InputDevice headset = InputDevices.GetDeviceAtXRNode(XRNode.Head);
+        if (!headset.isValid)
+            return;
 
         if (headset.TryGetFeatureValue(CommonUsages.userPresence, out bool wornNow))
         {
@@ -59,8 +61,6 @@ public class WornVr : MonoBehaviour
     private IEnumerator ChangeSceneAfterDelay()
     {
         float delay = Mathf.Max(0f, secondsBeforeSceneChange);
-
-        sceneChangeRoutine = null;
 
         while (delay > 0)
         {
