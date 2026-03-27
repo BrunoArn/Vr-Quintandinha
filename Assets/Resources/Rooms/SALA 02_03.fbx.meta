@@ -3,7 +3,72 @@ guid: 997389eb4b256d440b216c5d139bd8ef
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BIOMBO.001
+    second: {fileID: 2100000, guid: da2d38c54a844b24e9800fd474bd554c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHAO CONTORNO
+    second: {fileID: 2100000, guid: 6cac432724311b349ab2ca191094591d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHAO MEIO
+    second: {fileID: 2100000, guid: be3e287bff383e84e9a6d8db09fef221, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FONTE
+    second: {fileID: 2100000, guid: c3a9ce92439f15146942f7266a21aa02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOLDURA ESPELHO
+    second: {fileID: 2100000, guid: 0e5de803d83446b4997754cbe2680af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 777387714fe729543bebc987a39b13ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 8249dabbc9fcd8547905675d4f6423dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 8c61ef038de554d4992d740195775bd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PAREDE
+    second: {fileID: 2100000, guid: 18baf1ad8ba1c2947a304edbf2cdd737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PES MESA LOWPOLY
+    second: {fileID: 2100000, guid: e6869dcde54c3da47b2aceec6c780a85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RODAPE
+    second: {fileID: 2100000, guid: 71f959aa62a72c64ab46a6c23afa7623, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porta verde
+    second: {fileID: 2100000, guid: 196f0db9357d46343a58b1dfd3099ba4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tripo_mat_5748b816
+    second: {fileID: 2100000, guid: 79187cf2a506a4a4898d4b299005d0b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
