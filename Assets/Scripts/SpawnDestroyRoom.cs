@@ -5,13 +5,12 @@ public class SpawnDestroyRoom : MonoBehaviour
 {
     [SerializeField] BoxCollider triggerCollider; // The collider that will trigger the spawning and destroying of the room
 
-    [SerializeField] bool spawn = false;
-    [SerializeField] private GameObject roomPrefab; // The prefab of the room to spawn
-    [SerializeField] private Transform spawnPoint; // The point where the room will be spawned
+    [SerializeField] bool show = false;
+    [SerializeField] private GameObject roomToSHow; // The prefab of the room to spawn
 
     [Space]
-    [SerializeField] bool destroy = false;
-    [SerializeField] private GameObject roomToDestroy; // The room to destroy when the player enters the trigger
+    [SerializeField] bool hide = false;
+    [SerializeField] private GameObject roomToHide; // The room to destroy when the player enters the trigger
 
     void Awake()
     {
@@ -23,16 +22,16 @@ public class SpawnDestroyRoom : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (spawn == true)
+        if (show == true)
         {
-            Instantiate(roomPrefab, spawnPoint.position, roomPrefab.transform.rotation);
-            spawn = false; // Set spawn to false to prevent multiple spawns if the player stays in the trigger
+            roomToSHow.SetActive(true);
+            show = false; // Set spawn to false to prevent multiple spawns if the player stays in the trigger
         }
 
-        if (destroy == true)
+        if (hide == true)
         {
-            Destroy(roomToDestroy);
-            destroy = false; // Set destroy to false to prevent multiple destructions if the player stays in the trigger
+            roomToHide.SetActive(false);
+            hide = false; // Set destroy to false to prevent multiple destructions if the player stays in the trigger
         }
     }
 }
