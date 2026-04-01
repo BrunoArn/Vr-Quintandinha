@@ -33,5 +33,6 @@ public class SpawnDestroyRoom : MonoBehaviour
             roomToHide.SetActive(false);
             hide = false; // Set destroy to false to prevent multiple destructions if the player stays in the trigger
         }
+        Destroy(this.gameObject); // Destroy the trigger after it has been activated
     }
 }

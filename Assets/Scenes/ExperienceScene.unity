@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: febbd85c92e3dc84c9fb98c16814cf39, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 8c806cbf6a656ea4187dbb0b9f5c89dc, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -119,6 +119,148 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &72089217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72089218}
+  - component: {fileID: 72089220}
+  - component: {fileID: 72089219}
+  m_Layer: 0
+  m_Name: room 2 Hider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72089218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72089217}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.71195835, z: -0, w: 0.7022217}
+  m_LocalPosition: {x: 13.22, y: 2.04, z: -0.74}
+  m_LocalScale: {x: 1, y: 3.67, z: 7.03}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332419216}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.789, z: 0}
+--- !u!114 &72089219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72089217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650846362cd7f8d45b787771e047054f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnDestroyRoom
+  triggerCollider: {fileID: 72089220}
+  show: 1
+  roomToSHow: {fileID: 391517116130393728}
+  hide: 1
+  roomToHide: {fileID: 1258596615}
+--- !u!65 &72089220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72089217}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.3737836, y: 1, z: 0.16922788}
+  m_Center: {x: -0.3599056, y: 0, z: -0.41541463}
+--- !u!1 &142131461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142131462}
+  - component: {fileID: 142131464}
+  - component: {fileID: 142131463}
+  m_Layer: 0
+  m_Name: sala 8  hider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142131462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142131461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.75, y: 2.04, z: 29.73}
+  m_LocalScale: {x: 1, y: 3.67, z: 7.03}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332419216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142131463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142131461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650846362cd7f8d45b787771e047054f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnDestroyRoom
+  triggerCollider: {fileID: 142131464}
+  show: 1
+  roomToSHow: {fileID: 6506208766451742826}
+  hide: 1
+  roomToHide: {fileID: 1385764481}
+--- !u!65 &142131464
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142131461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &332419215
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +290,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 72089218}
   - {fileID: 621585018}
+  - {fileID: 412282212}
+  - {fileID: 142131462}
+  - {fileID: 452508688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390376262
@@ -278,6 +424,77 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &412282211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412282212}
+  - component: {fileID: 412282214}
+  - component: {fileID: 412282213}
+  m_Layer: 0
+  m_Name: teatro Spawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412282212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412282211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.97257334, z: 0, w: 0.23259674}
+  m_LocalPosition: {x: 24.04, y: 2.04, z: 53.38}
+  m_LocalScale: {x: 1, y: 3.67, z: 7.03}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332419216}
+  m_LocalEulerAnglesHint: {x: 0, y: 153.1, z: 0}
+--- !u!114 &412282213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412282211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650846362cd7f8d45b787771e047054f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnDestroyRoom
+  triggerCollider: {fileID: 412282214}
+  show: 1
+  roomToSHow: {fileID: 1710249684}
+  hide: 0
+  roomToHide: {fileID: 0}
+--- !u!65 &412282214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412282211}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &441087506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,6 +503,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670256624, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -334,9 +559,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2766569358201078490, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5167925059111895691, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563199296126487199, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826056641483426609, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Enabled
@@ -350,6 +583,77 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1942964766}
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+--- !u!1 &452508687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 452508688}
+  - component: {fileID: 452508690}
+  - component: {fileID: 452508689}
+  m_Layer: 0
+  m_Name: pscina show
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &452508688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452508687}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.47242767, z: -0, w: 0.88136953}
+  m_LocalPosition: {x: 22.43, y: 2.04, z: 2.82}
+  m_LocalScale: {x: 1, y: 3.67, z: 7.03}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332419216}
+  m_LocalEulerAnglesHint: {x: 0, y: 56.384, z: 0}
+--- !u!114 &452508689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452508687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650846362cd7f8d45b787771e047054f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnDestroyRoom
+  triggerCollider: {fileID: 452508690}
+  show: 1
+  roomToSHow: {fileID: 1907801262}
+  hide: 1
+  roomToHide: {fileID: 1710249684}
+--- !u!65 &452508690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452508687}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &490148989
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +965,7 @@ GameObject:
   - component: {fileID: 621585020}
   - component: {fileID: 621585019}
   m_Layer: 0
-  m_Name: Pscina Spawner
+  m_Name: sala 8 Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +980,7 @@ Transform:
   m_GameObject: {fileID: 621585017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.71195835, z: -0, w: 0.7022217}
-  m_LocalPosition: {x: 19, y: 2.04, z: 18.1}
+  m_LocalPosition: {x: 19, y: 2.04, z: 9.9}
   m_LocalScale: {x: 1, y: 3.67, z: 7.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -696,9 +1000,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnDestroyRoom
   triggerCollider: {fileID: 621585020}
   show: 1
-  roomToSHow: {fileID: 1907801262}
+  roomToSHow: {fileID: 1385764481}
   hide: 1
-  roomToHide: {fileID: 1258596615}
+  roomToHide: {fileID: 6506208766451742826}
 --- !u!65 &621585020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1352,11 +1656,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sala 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4660956676252274705, guid: eeff70f4a3e00fa44a9c4f90f78b136c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeff70f4a3e00fa44a9c4f90f78b136c, type: 3}
+--- !u!1 &1385764481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4660956676252274705, guid: eeff70f4a3e00fa44a9c4f90f78b136c, type: 3}
+  m_PrefabInstance: {fileID: 1385764480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430903732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +2154,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1352821890}
   m_LocalEulerAnglesHint: {x: -81.764, y: 0, z: 0}
+--- !u!1 &1710249684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603911109149121650, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
+  m_PrefabInstance: {fileID: 1752076734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1747133545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,6 +2298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teatro
       objectReference: {fileID: 0}
+    - target: {fileID: 4603911109149121650, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5354656060263566655, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.35
@@ -2077,6 +2399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Psicina
       objectReference: {fileID: 0}
+    - target: {fileID: 4975858764918217589, guid: d0dd304e237ea994db3d7f9525016056, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2100,7 +2426,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942964759}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f29f12b3d0a40174a95f10cfbabd60fe, type: 2}
   m_CullingMode: 0
@@ -2351,6 +2677,10 @@ PrefabInstance:
     - target: {fileID: 185415301368962992, guid: 69aab27a241daf6478d267a3299d963c, type: 3}
       propertyPath: m_Name
       value: Sala 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 185415301368962992, guid: 69aab27a241daf6478d267a3299d963c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 185415301368962992, guid: 69aab27a241daf6478d267a3299d963c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3081,6 +3411,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69aab27a241daf6478d267a3299d963c, type: 3}
+--- !u!1 &391517116130393728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 185415301368962992, guid: 69aab27a241daf6478d267a3299d963c, type: 3}
+  m_PrefabInstance: {fileID: 391517116130393727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3089925287070073072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4087,6 +4422,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a6dc0f81b658b4b84417a0f038d826, type: 3}
+--- !u!1 &6506208766451742826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4641621392449861622, guid: 39a6dc0f81b658b4b84417a0f038d826, type: 3}
+  m_PrefabInstance: {fileID: 6506208766451742825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
