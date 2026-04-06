@@ -1,64 +1,9 @@
 fileFormatVersion: 2
-guid: 06a5c7755978f744aa3eb308b198e065
+guid: 3e725cdfc4741e54d91dfbb5d3a65875
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ESTATUA
-    second: {fileID: 2100000, guid: c88b8bedfa430024d99e74c3389f3fcc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FAIXA BRANCA PAREDE_
-    second: {fileID: 2100000, guid: 4e3cfae14c164dd429d3b942dce95304, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FAIXA RODAPE TETO
-    second: {fileID: 2100000, guid: 470eab819b497f948ae5c1afca5d7d92, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FAIXA RODAPE TETO.001
-    second: {fileID: 2100000, guid: af9fc834eda12c0438ca72ca615208a4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LUSTRE
-    second: {fileID: 2100000, guid: 690b48581c75a1a4392c127ebb5b76de, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.008
-    second: {fileID: 2100000, guid: 1797e1e446288e748b1118c3bc4e4312, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PILASTRA
-    second: {fileID: 2100000, guid: 38c3ec3bf965af84b9d901a80010653f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: VELUDO CHAO
-    second: {fileID: 2100000, guid: eb9458fc438736d4eb998f9b7a5497e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: VELUDO TETO
-    second: {fileID: 2100000, guid: c66a70c66881c78458c5e8e578b3cf1f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wallpaper001A_4K-PNG_NORMAL
-    second: {fileID: 2100000, guid: 3d8fcce94ee65104bbfd4e835bb9a8b3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tripo_mat_c07e2716-bef7-4fbd-ab45-3951a2464c9e
-    second: {fileID: 2100000, guid: 4fa5adf47cb6fe44d9961fcbedffa61d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
