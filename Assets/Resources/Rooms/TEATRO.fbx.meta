@@ -3,7 +3,92 @@ guid: ba300f8286754484087a341af1981b1e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHAO MADEIRA
+    second: {fileID: 2100000, guid: 6bf95daafb2125c478e7d935002b484a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHAO TECIDO
+    second: {fileID: 2100000, guid: 04ee64b5898cf844d9b6cea33815573b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LUZ_
+    second: {fileID: 2100000, guid: 92e3a77031abcf4428bf2d8524911717, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: c00e9ee44ab38254e8287f9fa9067009, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 18169e431c0bdc143afc9004448e91dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 59249f56adf478e469719fab2e64420d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 5b9a120f6f92e534b9207cf02f8423ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 1ca982d2eb3f1ad4bad2b0fc746bb340, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PAREDE
+    second: {fileID: 2100000, guid: b9acdc8d0fad5b34e90372e19433420c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PAREDE GESSO
+    second: {fileID: 2100000, guid: dfea432421abfed4883d4a13fc821e5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: geometry_0_material
+    second: {fileID: 2100000, guid: e3c0daadf4c121c498646d323b122099, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parede branca
+    second: {fileID: 2100000, guid: a0aa0cb14a14a1d47b65018022cb8f6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parede normal
+    second: {fileID: 2100000, guid: 278c70d5a7e39ea48b83da34e7abb192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parede normal.001
+    second: {fileID: 2100000, guid: 43627df6445101d4fb171172604bb351, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rodapezinho
+    second: {fileID: 2100000, guid: 2b450ca21a94a7245bcd31f9bf96233e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tripo_mat_9e884d96-ca94-445b-9345-223c4ba8536e
+    second: {fileID: 2100000, guid: 74053491c51d89e41851fdcf058c41d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tripo_mat_c8997cc1-038b-478c-ba1f-600df8f7a40b
+    second: {fileID: 2100000, guid: f22f5e46ca782ab4baea9e89b921309c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
