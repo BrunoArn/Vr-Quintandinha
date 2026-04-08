@@ -415,8 +415,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: PISCINA 03
       objectReference: {fileID: 0}
+    - target: {fileID: 6681318910505135688, guid: 70155c09c85bbee4ea05279b61deed38, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 92e3a77031abcf4428bf2d8524911717, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1953633850880242239, guid: 70155c09c85bbee4ea05279b61deed38, type: 3}
+    - {fileID: -2572967989333021709, guid: 70155c09c85bbee4ea05279b61deed38, type: 3}
+    - {fileID: 65702495048144492, guid: 70155c09c85bbee4ea05279b61deed38, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70155c09c85bbee4ea05279b61deed38, type: 3}
