@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba300f8286754484087a341af1981b1e
+guid: 55c7434b6b3756241a132bb649355851
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -23,12 +23,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: c00e9ee44ab38254e8287f9fa9067009, type: 2}
+    second: {fileID: 2100000, guid: 246a7ad04d7612c4f8317f7960698780, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.001
     second: {fileID: 2100000, guid: 18169e431c0bdc143afc9004448e91dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 1c46a636763a7a8479a277f9db0763e7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -57,21 +62,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: geometry_0_material
-    second: {fileID: 2100000, guid: e3c0daadf4c121c498646d323b122099, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: parede branca
-    second: {fileID: 2100000, guid: a0aa0cb14a14a1d47b65018022cb8f6d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: parede normal
-    second: {fileID: 2100000, guid: 278c70d5a7e39ea48b83da34e7abb192, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: parede normal.001
     second: {fileID: 2100000, guid: 43627df6445101d4fb171172604bb351, type: 2}
   - first:
@@ -83,12 +73,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tripo_mat_9e884d96-ca94-445b-9345-223c4ba8536e
-    second: {fileID: 2100000, guid: 74053491c51d89e41851fdcf058c41d9, type: 2}
+    second: {fileID: 2100000, guid: 4dd35aae66e6968459e9c6c31a08eaba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tripo_mat_c8997cc1-038b-478c-ba1f-600df8f7a40b
-    second: {fileID: 2100000, guid: f22f5e46ca782ab4baea9e89b921309c, type: 2}
+    second: {fileID: 2100000, guid: b6401f396157e4d439d0064a8e7b5081, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -130,7 +120,7 @@ ModelImporter:
     importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
-    swapUVChannels: 0
+    swapUVChannels: 1
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
