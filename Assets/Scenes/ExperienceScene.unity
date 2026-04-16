@@ -871,6 +871,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 0544fac103d8b4d42afc430382e14570, type: 2}
     - {fileID: 11400000, guid: 492a4c2cc84d3ef409d9a117a60dfd68, type: 2}
+    - {fileID: 11400000, guid: 5ced17ddf76645e47934742730a836cf, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -891,6 +892,20 @@ MonoBehaviour:
         - m_Target: {fileID: 188951920}
           m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
           m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 988069134}
+          m_TargetAssemblyTypeName: FadeTransition, Assembly-CSharp
+          m_MethodName: StartTransition
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1959,6 +1974,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 609518669015072820, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -52.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 609518669015072820, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.6
+      objectReference: {fileID: 0}
     - target: {fileID: 735963241177201019, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -2052,6 +2075,10 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3391714798620450626, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3668091393269543988, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
       propertyPath: m_Lightmapping
       value: 2
@@ -2135,6 +2162,10 @@ PrefabInstance:
     - target: {fileID: 5356089271219370432, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833401111912519954, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6541268100987786125, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
       propertyPath: m_Lightmapping
