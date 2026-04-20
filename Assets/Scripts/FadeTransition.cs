@@ -8,6 +8,7 @@ public class FadeTransition : MonoBehaviour
     [Header("Fade Settings")]
     [SerializeField] private Image fadeImage; // Reference to the UI Image used for fading
     [SerializeField] private float fadeDuration = 1f; // Duration of the fade
+    [SerializeField] private float waitTIme = 1f; // Time to wait between fade out and fade in
 
     [Header("Rooms Settings")]
     [SerializeField] private GameObject currentRoom; // Reference to the current room
@@ -48,7 +49,7 @@ public class FadeTransition : MonoBehaviour
         if (nextRoom != null)
             nextRoom.SetActive(true);
 
-        yield return null;
+        yield return new WaitForSeconds(waitTIme);
 
         yield return StartCoroutine(Fade(1f, 0f));
 
