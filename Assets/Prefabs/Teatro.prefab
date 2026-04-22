@@ -3598,6 +3598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FadeTransition
   fadeImage: {fileID: 0}
   fadeDuration: 2
+  waitTIme: 0.5
   currentRoom: {fileID: 5356089271219370432}
   nextRoom: {fileID: 0}
 --- !u!1 &1782487223043812378
@@ -16592,7 +16593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3348344193430519291
 Transform:
   m_ObjectHideFlags: 0
@@ -20961,7 +20962,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7211873125060734853}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: ccd5178608fb7e849b42d79a413eb96f, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 10d9d6c9e1e2e374a9b5ea948dada4da, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -20986,7 +20987,7 @@ VideoPlayer:
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!1 &7269284382320329463
