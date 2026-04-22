@@ -915,6 +915,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Psicina
       objectReference: {fileID: 0}
+    - target: {fileID: 1096197537360390129, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
+      propertyPath: waitTIme
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617689012953823817, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
+      propertyPath: waitTIme
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889029299445592214, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
+      propertyPath: waitTIme
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6835908110879962069, guid: 5f00e106b0631ba46822eedef2442101, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.467
@@ -1151,6 +1163,10 @@ PrefabInstance:
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 633480086}
+    - target: {fileID: 8843189254673622052, guid: a5a99e028bf3aa9498555afe3d0547b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

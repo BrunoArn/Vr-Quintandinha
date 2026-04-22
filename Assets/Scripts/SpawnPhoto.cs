@@ -9,6 +9,9 @@ public class SpawnPhoto : MonoBehaviour
     private bool isFading = false;
     [SerializeField] private float waitTIme = 0.5f;
 
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform hidePoint;
+
     private Material runtimeMaterial;
     private Color baseColor = Color.white;
     private int colorPropertyId = -1;
@@ -46,6 +49,7 @@ public class SpawnPhoto : MonoBehaviour
 
         baseColor = runtimeMaterial.GetColor(colorPropertyId);
         SetFadeAlpha(0f);
+        gameObject.transform.position = hidePoint.position;
     }
 
     public void StartTransition()
@@ -55,6 +59,7 @@ public class SpawnPhoto : MonoBehaviour
             return;
         }
 
+        gameObject.transform.position = spawnPoint.position;
         StartCoroutine(FadeTransitionCoroutine());
     }
 
@@ -63,10 +68,9 @@ public class SpawnPhoto : MonoBehaviour
         isFading = true;
 
         yield return StartCoroutine(Fade(0f, 1f));
-
         yield return new WaitForSeconds(waitTIme);
-
         yield return StartCoroutine(Fade(1f, 0f));
+        gameObject.transform.position = hidePoint.position;
 
         isFading = false;
     }
