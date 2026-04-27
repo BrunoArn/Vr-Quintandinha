@@ -3796,7 +3796,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2457075067385991181}
-  - component: {fileID: 3891589770371812374}
   m_Layer: 0
   m_Name: Sala 8
   m_TagString: Untagged
@@ -3820,23 +3819,6 @@ Transform:
   - {fileID: 2722223820387212918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3891589770371812374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3814009191929312708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a1c4105e8ac064ba80907187bde293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FadeTransition
-  fadeImage: {fileID: 0}
-  fadeDuration: 2
-  waitTIme: 0.5
-  currentRoom: {fileID: 8843189254673622052}
-  nextRoom: {fileID: 0}
 --- !u!1 &3835126751963147956
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,8 +6408,8 @@ Transform:
   m_GameObject: {fileID: 6397060514042468572}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -33.807625, y: 12.639379, z: 157.04092}
-  m_LocalScale: {x: 0.6700001, y: 0.66999996, z: 0.66999996}
+  m_LocalPosition: {x: -33.807625, y: 6.63, z: 144.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5937160615289635560}
@@ -6545,7 +6527,7 @@ VideoPlayer:
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!95 &2943670913950330543
