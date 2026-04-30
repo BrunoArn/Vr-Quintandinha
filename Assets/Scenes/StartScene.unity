@@ -900,7 +900,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792490906}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 155cddb1756e6364185b5ec6e5dfce45, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2d9ac64e84df0454fb960add3a19c1a1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1582,6 +1582,8 @@ MonoBehaviour:
   sceneToLoad: ExperienceScene
   secondsBeforeSceneChange: 6
   countdownText: {fileID: 1668765473}
+  fadeImage: {fileID: 441087507}
+  fadeDuration: 1
 --- !u!4 &1961795582
 Transform:
   m_ObjectHideFlags: 0
