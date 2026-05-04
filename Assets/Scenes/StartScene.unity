@@ -1588,6 +1588,7 @@ MonoBehaviour:
   countdownText: {fileID: 1668765473}
   fadeImage: {fileID: 441087507}
   fadeDuration: 1
+  videoPlayer: {fileID: 792490907}
 --- !u!4 &1961795582
 Transform:
   m_ObjectHideFlags: 0

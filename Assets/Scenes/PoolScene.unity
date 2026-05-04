@@ -483,6 +483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WornVr2
   sceneToLoad: StartScene
+  secondsBeforeSceneChange: 5
+  countdownText: {fileID: 0}
 --- !u!114 &606120463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,6 +1508,10 @@ PrefabInstance:
     - target: {fileID: 8748413761255892084, guid: dc86130c04518bd418ce7a9ad9e3e2dd, type: 3}
       propertyPath: m_Name
       value: "S\xE9pia"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748413761255892084, guid: dc86130c04518bd418ce7a9ad9e3e2dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

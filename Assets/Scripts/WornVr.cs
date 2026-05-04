@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class WornVr : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class WornVr : MonoBehaviour
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
+    [SerializeField] private VideoPlayer videoPlayer;
 
     private bool isHeadsetWorn;
     private bool hasWearState;
@@ -20,31 +22,53 @@ public class WornVr : MonoBehaviour
     private void Awake()
     {
         SetFadeAlpha(0f);
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.playOnAwake = false;
+            videoPlayer.Pause();
+        }
     }
 
     private void Update()
     {
         InputDevice headset = InputDevices.GetDeviceAtXRNode(XRNode.Head);
         if (!headset.isValid)
-            return;
-
-        if (headset.TryGetFeatureValue(CommonUsages.userPresence, out bool wornNow))
         {
-            if (!hasWearState || wornNow != isHeadsetWorn)
+            if (!hasWearState || isHeadsetWorn)
             {
                 hasWearState = true;
-                isHeadsetWorn = wornNow;
+                isHeadsetWorn = false;
+                PauseApplication();
+                PauseVideo();
+                StopSceneCountdown();
+            }
 
-                if (isHeadsetWorn)
-                {
-                    ResumeApplication();
-                    StartSceneCountdown();
-                }
-                else
-                {
-                    PauseApplication();
-                    StopSceneCountdown();
-                }
+            return;
+        }
+
+        bool wornNow = true;
+        if (headset.TryGetFeatureValue(CommonUsages.userPresence, out bool userPresence))
+        {
+            wornNow = userPresence;
+        }
+
+        if (!hasWearState || wornNow != isHeadsetWorn)
+        {
+            hasWearState = true;
+            isHeadsetWorn = wornNow;
+
+            if (isHeadsetWorn)
+            {
+                ResumeApplication();
+                PlayVideo();
+                StartSceneCountdown();
+            }
+            else
+            {
+                PauseApplication();
+                PauseVideo();
+                StopSceneCountdown();
             }
         }
     }
@@ -141,9 +165,26 @@ public class WornVr : MonoBehaviour
         AudioListener.pause = false;
     }
 
+    private void PlayVideo()
+    {
+        if (videoPlayer == null || videoPlayer.isPlaying)
+            return;
+
+        videoPlayer.Play();
+    }
+
+    private void PauseVideo()
+    {
+        if (videoPlayer == null)
+            return;
+
+        videoPlayer.Pause();
+    }
+
     private void OnDisable()
     {
         StopSceneCountdown();
+        PauseVideo();
         ResumeApplication();
     }
 }
