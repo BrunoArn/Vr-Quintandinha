@@ -8,6 +8,7 @@ public class SpawnPhoto : MonoBehaviour
     [SerializeField] private float fadeDuration = 1f;
     private bool isFading = false;
     [SerializeField] private float waitTIme = 0.5f;
+    [SerializeField] private float alphaLimit = 0.7f;
 
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform hidePoint;
@@ -67,9 +68,9 @@ public class SpawnPhoto : MonoBehaviour
     {
         isFading = true;
 
-        yield return StartCoroutine(Fade(0f, 1f));
+        yield return StartCoroutine(Fade(0f, alphaLimit));
         yield return new WaitForSeconds(waitTIme);
-        yield return StartCoroutine(Fade(1f, 0f));
+        yield return StartCoroutine(Fade(alphaLimit, 0f));
         gameObject.transform.position = hidePoint.position;
 
         isFading = false;

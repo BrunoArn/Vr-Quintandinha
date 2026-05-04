@@ -383,6 +383,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7537250554189092429, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Antialiasing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537250554189092429, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
@@ -568,6 +572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WornVr2
   sceneToLoad: StartScene
+  secondsBeforeSceneChange: 3
+  countdownText: {fileID: 0}
 --- !u!114 &606120463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +590,7 @@ MonoBehaviour:
   fadeImage: {fileID: 633480086}
   fadeDuration: 1
   waitTIme: 1
+  renderTexture: {fileID: 8400000, guid: 5abdf3ac00455eb4cbf61e0f80253169, type: 2}
 --- !u!114 &633480086 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5623397731185656231, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -1419,6 +1426,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1279166557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7211873125060734853, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
+  m_PrefabInstance: {fileID: 8604565160070286338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1279166562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279166557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e088817e2715a7d41a040b8e9a862439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetRenderTexture
+  videoPlayer: {fileID: 188951920}
+  renderTexture: {fileID: 8400000, guid: 5abdf3ac00455eb4cbf61e0f80253169, type: 2}
 --- !u!1 &1350783417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,7 +2949,7 @@ PrefabInstance:
     - target: {fileID: 2036481770532743131, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 3e2e6a7cff8853b43a76ddeb163c1664, type: 3}
+      objectReference: {fileID: 32900000, guid: 2cf169381650f5b4786df5fbe499414a, type: 3}
     - target: {fileID: 2318694050425431332, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000165
@@ -3704,7 +3730,10 @@ PrefabInstance:
     - {fileID: 5586482802244069594, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
     - {fileID: 3466711125809179937, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7211873125060734853, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1279166562}
   m_SourcePrefab: {fileID: 100100000, guid: 97815a97d060db6458262a5cb798ea6a, type: 3}
 --- !u!33 &8712923247291379140
 MeshFilter:

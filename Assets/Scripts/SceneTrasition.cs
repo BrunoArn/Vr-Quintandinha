@@ -13,6 +13,9 @@ public class SceneTrasition : MonoBehaviour
     [SerializeField] private float fadeDuration = 1f; // Duration of the fade
     [SerializeField] private float waitTIme = 1f; // Time to wait between fade out and fade in
 
+    [Header("Optional Render Texture Reset")]
+    [SerializeField] private RenderTexture renderTexture;
+
     private bool isFading = false; // Flag to prevent multiple fade transitions
 
     void Awake()
@@ -36,7 +39,7 @@ public class SceneTrasition : MonoBehaviour
         isFading = true;
 
         yield return StartCoroutine(Fade(0f, 1f));
-        yield return new WaitForSeconds(waitTIme);
+        yield return new WaitForSecondsRealtime(waitTIme);
         SceneManager.LoadScene(sceneToLoad);
     }
 
@@ -46,14 +49,24 @@ public class SceneTrasition : MonoBehaviour
 
         while (elapsed < fadeDuration)
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / fadeDuration);
+            elapsed += Time.unscaledDeltaTime;
+            float t = fadeDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / fadeDuration);
             float alpha = Mathf.Lerp(startAlpha, endAlpha, t);
             SetFadeAlpha(alpha);
             yield return null;
         }
 
+        ResetRenderTextureIfAssigned();
+        
         SetFadeAlpha(endAlpha);
+    }
+
+    private void ResetRenderTextureIfAssigned()
+    {
+        if (renderTexture == null)
+            return;
+
+        ClearRenderTexture(renderTexture, Color.black);
     }
 
     private void SetFadeAlpha(float alpha)
@@ -64,5 +77,20 @@ public class SceneTrasition : MonoBehaviour
         Color color = fadeImage.color;
         color.a = alpha;
         fadeImage.color = color;
+    }
+
+    private void ClearRenderTexture(RenderTexture rt, Color color)
+    {
+        if (rt == null)
+        {
+            return;
+        }
+
+        RenderTexture previous = RenderTexture.active;
+
+        RenderTexture.active = rt;
+        GL.Clear(true, true, color);
+
+        RenderTexture.active = previous;
     }
 }

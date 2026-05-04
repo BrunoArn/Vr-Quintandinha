@@ -14,10 +14,12 @@ public class WornVr : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private float videoPrepareTimeout = 10f;
 
     private bool isHeadsetWorn;
     private bool hasWearState;
     private Coroutine sceneChangeRoutine;
+    private Coroutine videoPlayRoutine;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class WornVr : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.playOnAwake = false;
+            videoPlayer.waitForFirstFrame = true;
             videoPlayer.Pause();
         }
     }
@@ -170,15 +173,64 @@ public class WornVr : MonoBehaviour
         if (videoPlayer == null || videoPlayer.isPlaying)
             return;
 
-        videoPlayer.Play();
+        if (videoPlayRoutine == null)
+        {
+            videoPlayRoutine = StartCoroutine(PlayVideoWhenReady());
+        }
     }
 
     private void PauseVideo()
     {
+        if (videoPlayRoutine != null)
+        {
+            StopCoroutine(videoPlayRoutine);
+            videoPlayRoutine = null;
+        }
+
         if (videoPlayer == null)
             return;
 
         videoPlayer.Pause();
+    }
+
+    private IEnumerator PlayVideoWhenReady()
+    {
+        videoPlayer.waitForFirstFrame = true;
+
+        if (!videoPlayer.isPrepared)
+        {
+            videoPlayer.Prepare();
+            float timeoutAt = Time.realtimeSinceStartup + Mathf.Max(0f, videoPrepareTimeout);
+
+            while (!videoPlayer.isPrepared)
+            {
+                if (!isHeadsetWorn)
+                {
+                    videoPlayRoutine = null;
+                    yield break;
+                }
+
+                if (videoPrepareTimeout > 0f && Time.realtimeSinceStartup >= timeoutAt)
+                {
+                    Debug.LogWarning("WornVr: video prepare timed out.");
+                    videoPlayRoutine = null;
+                    yield break;
+                }
+
+                yield return null;
+            }
+        }
+
+        yield return new WaitForEndOfFrame();
+
+        if (!isHeadsetWorn)
+        {
+            videoPlayRoutine = null;
+            yield break;
+        }
+
+        videoPlayer.Play();
+        videoPlayRoutine = null;
     }
 
     private void OnDisable()
