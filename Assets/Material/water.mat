@@ -61,11 +61,11 @@ Material:
     m_Floats:
     - _Depoth: 0
     - _Depth: 0.84
-    - _Displacment: 0.08
+    - _Displacment: 0.1
     - _NormalStrengh: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0.932
     - _Strengh: 1.2
     - _XRMotionVectorsPass: 1
     m_Colors:

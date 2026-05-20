@@ -8,22 +8,34 @@ using UnityEngine.Video;
 
 public class WornVr : MonoBehaviour
 {
+    [Header("Scene Transition")]
     [SerializeField] private string sceneToLoad = "MainScene";
     [SerializeField] private float secondsBeforeSceneChange = 5f;
+
+    [Header("UI")]
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
+
+    [Header("Video Playback")]
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private float secondsBeforeVideoPlay = 2f;
     [SerializeField] private float videoPrepareTimeout = 10f;
+
+    [Header("Render Texture Reset")]
+    [SerializeField] private RenderTexture videoRenderTexture;
+    [SerializeField] private Color renderTextureClearColor = Color.black;
 
     private bool isHeadsetWorn;
     private bool hasWearState;
     private Coroutine sceneChangeRoutine;
     private Coroutine videoPlayRoutine;
 
+    // Initialize the fade, video player, and render texture before headset detection starts.
     private void Awake()
     {
         SetFadeAlpha(0f);
+        ClearVideoRenderTexture();
 
         if (videoPlayer != null)
         {
@@ -33,6 +45,7 @@ public class WornVr : MonoBehaviour
         }
     }
 
+    // Poll the headset wear state and react only when that state changes.
     private void Update()
     {
         InputDevice headset = InputDevices.GetDeviceAtXRNode(XRNode.Head);
@@ -43,7 +56,7 @@ public class WornVr : MonoBehaviour
                 hasWearState = true;
                 isHeadsetWorn = false;
                 PauseApplication();
-                PauseVideo();
+                ResetVideoPlayback();
                 StopSceneCountdown();
             }
 
@@ -64,18 +77,19 @@ public class WornVr : MonoBehaviour
             if (isHeadsetWorn)
             {
                 ResumeApplication();
-                PlayVideo();
+                StartVideoPlayback();
                 StartSceneCountdown();
             }
             else
             {
                 PauseApplication();
-                PauseVideo();
+                ResetVideoPlayback();
                 StopSceneCountdown();
             }
         }
     }
 
+    // Start the scene countdown once. Repeated headset state checks should not start duplicates.
     private void StartSceneCountdown()
     {
         if (sceneChangeRoutine == null)
@@ -84,6 +98,7 @@ public class WornVr : MonoBehaviour
         }
     }
 
+    // Cancel the scene countdown and clear the visible counter.
     private void StopSceneCountdown()
     {
         if (sceneChangeRoutine != null)
@@ -91,8 +106,14 @@ public class WornVr : MonoBehaviour
             StopCoroutine(sceneChangeRoutine);
             sceneChangeRoutine = null;
         }
+
+        if (countdownText != null)
+        {
+            countdownText.text = string.Empty;
+        }
     }
 
+    // Count down in real time, then fade out and load the configured scene if the headset is still worn.
     private IEnumerator ChangeSceneAfterDelay()
     {
         float delay = Mathf.Max(0f, secondsBeforeSceneChange);
@@ -113,6 +134,8 @@ public class WornVr : MonoBehaviour
             countdownText.text = "0";
         }
 
+        sceneChangeRoutine = null;
+
         if (!isHeadsetWorn)
             yield break;
 
@@ -129,6 +152,7 @@ public class WornVr : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
+    // Fade the assigned image using unscaled time so it still works while the app is paused.
     private IEnumerator Fade(float startAlpha, float endAlpha)
     {
         float elapsed = 0f;
@@ -144,6 +168,7 @@ public class WornVr : MonoBehaviour
         SetFadeAlpha(endAlpha);
     }
 
+    // Apply only the alpha change, preserving the fade image's current color.
     private void SetFadeAlpha(float alpha)
     {
         if (fadeImage == null)
@@ -154,6 +179,7 @@ public class WornVr : MonoBehaviour
         fadeImage.color = color;
     }
 
+    // Pause global time and audio when the headset is removed.
     private void PauseApplication()
     {
         Debug.Log("WornVr: Headset removed, pausing application.");
@@ -161,6 +187,7 @@ public class WornVr : MonoBehaviour
         AudioListener.pause = true;
     }
 
+    // Restore global time and audio when the headset is worn again.
     private void ResumeApplication()
     {
         Debug.Log("WornVr: Headset worn, resuming application.");
@@ -168,18 +195,22 @@ public class WornVr : MonoBehaviour
         AudioListener.pause = false;
     }
 
-    private void PlayVideo()
+    // Clear the previous frame and start the delayed video playback routine.
+    private void StartVideoPlayback()
     {
         if (videoPlayer == null || videoPlayer.isPlaying)
             return;
 
+        ClearVideoRenderTexture();
+
         if (videoPlayRoutine == null)
         {
-            videoPlayRoutine = StartCoroutine(PlayVideoWhenReady());
+            videoPlayRoutine = StartCoroutine(PlayVideoAfterDelay());
         }
     }
 
-    private void PauseVideo()
+    // Stop pending playback, rewind the video, and clear the render texture.
+    private void ResetVideoPlayback()
     {
         if (videoPlayRoutine != null)
         {
@@ -190,11 +221,29 @@ public class WornVr : MonoBehaviour
         if (videoPlayer == null)
             return;
 
-        videoPlayer.Pause();
+        videoPlayer.Stop();
+        videoPlayer.time = 0d;
+        videoPlayer.frame = 0;
+        ClearVideoRenderTexture();
     }
 
-    private IEnumerator PlayVideoWhenReady()
+    // Wait for the app/headset to settle, prepare the video, then play it if the headset is still worn.
+    private IEnumerator PlayVideoAfterDelay()
     {
+        float delay = Mathf.Max(0f, secondsBeforeVideoPlay);
+        float playAt = Time.realtimeSinceStartup + delay;
+
+        while (Time.realtimeSinceStartup < playAt)
+        {
+            if (!isHeadsetWorn)
+            {
+                videoPlayRoutine = null;
+                yield break;
+            }
+
+            yield return null;
+        }
+
         videoPlayer.waitForFirstFrame = true;
 
         if (!videoPlayer.isPrepared)
@@ -233,10 +282,32 @@ public class WornVr : MonoBehaviour
         videoPlayRoutine = null;
     }
 
+    // Clear the assigned render texture, or the VideoPlayer target texture when no override is assigned.
+    private void ClearVideoRenderTexture()
+    {
+        RenderTexture renderTexture = videoRenderTexture;
+
+        if (renderTexture == null && videoPlayer != null)
+        {
+            renderTexture = videoPlayer.targetTexture;
+        }
+
+        if (renderTexture == null)
+            return;
+
+        RenderTexture previous = RenderTexture.active;
+
+        RenderTexture.active = renderTexture;
+        GL.Clear(true, true, renderTextureClearColor);
+
+        RenderTexture.active = previous;
+    }
+
+    // Leave the application in a resumed state if this component or scene is unloaded.
     private void OnDisable()
     {
         StopSceneCountdown();
-        PauseVideo();
+        ResetVideoPlayback();
         ResumeApplication();
     }
 }

@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WornVr2
   sceneToLoad: StartScene
-  secondsBeforeSceneChange: 3
+  secondsBeforeSceneChange: 6
   countdownText: {fileID: 0}
 --- !u!114 &606120463
 MonoBehaviour:
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54aabdd4752cbf4408966544a67efcbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTrasition
-  sceneToLoad: EndScene
+  sceneToLoad: PoolScene
   fadeImage: {fileID: 441087507}
   fadeDuration: 1
   waitTIme: 1

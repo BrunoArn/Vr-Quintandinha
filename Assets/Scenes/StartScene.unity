@@ -1601,7 +1601,10 @@ MonoBehaviour:
   fadeImage: {fileID: 441087507}
   fadeDuration: 1
   videoPlayer: {fileID: 792490907}
+  secondsBeforeVideoPlay: 2
   videoPrepareTimeout: 10
+  videoRenderTexture: {fileID: 8400000, guid: ff538b8bf3f2088449f0e1da9eb19db6, type: 2}
+  renderTextureClearColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &1961795582
 Transform:
   m_ObjectHideFlags: 0
@@ -1633,6 +1636,7 @@ MonoBehaviour:
   fadeImage: {fileID: 441087507}
   fadeDuration: 1
   waitTIme: 1
+  renderTexture: {fileID: 0}
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
