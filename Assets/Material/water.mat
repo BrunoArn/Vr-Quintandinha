@@ -61,7 +61,7 @@ Material:
     m_Floats:
     - _Depoth: 0
     - _Depth: 0.84
-    - _Displacment: 0.1
+    - _Displacment: 0.2
     - _NormalStrengh: 1
     - _QueueControl: 0
     - _QueueOffset: 0
