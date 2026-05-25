@@ -47,18 +47,26 @@ public class SceneTrasition : MonoBehaviour
     {
         float elapsed = 0f;
 
-        while (elapsed < fadeDuration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float t = fadeDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / fadeDuration);
-            float alpha = Mathf.Lerp(startAlpha, endAlpha, t);
-            SetFadeAlpha(alpha);
-            yield return null;
-        }
+    SetFadeAlpha(startAlpha);
 
+    while (elapsed < fadeDuration)
+    {
+        float delta = Mathf.Min(Time.unscaledDeltaTime, 0.05f);
+        elapsed += delta;
+
+        float t = fadeDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / fadeDuration);
+        float alpha = Mathf.Lerp(startAlpha, endAlpha, t);
+
+        SetFadeAlpha(alpha);
+        yield return null;
+    }
+
+    if (endAlpha >= 1f)
+    {
         ResetRenderTextureIfAssigned();
-        
-        SetFadeAlpha(endAlpha);
+    }
+
+    SetFadeAlpha(endAlpha);
     }
 
     private void ResetRenderTextureIfAssigned()

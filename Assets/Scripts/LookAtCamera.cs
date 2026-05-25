@@ -25,4 +25,9 @@ public class LookAtCamera : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(lookDirection.normalized, Vector3.up);
         transform.rotation = targetRotation * Quaternion.Euler(rotationOffsetEuler);
     }
+
+    public void changeRotationOffset(Vector3 newRotationOffsetEuler)
+    {
+        rotationOffsetEuler = newRotationOffsetEuler;
+    }
 }

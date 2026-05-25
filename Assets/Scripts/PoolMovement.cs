@@ -16,6 +16,9 @@ public class PoolMovement : MonoBehaviour
     [Header("photo script")]
     [SerializeField] private SpawnPhoto photoScript;
 
+    [Header("Octopus Positioning")]
+    [SerializeField] private OctopusPositioning octopusPositioning;
+
     private bool isTransitioning;
 
     private void Awake()
@@ -56,7 +59,10 @@ public class PoolMovement : MonoBehaviour
             transform.position,
             transform.rotation
         );
-
+        if (octopusPositioning != null)
+        {
+            octopusPositioning.UpdatePosition();
+        }
 
         if (waitTime > 0f)
         {
@@ -74,7 +80,8 @@ public class PoolMovement : MonoBehaviour
         {
             photoScript.StartTransition();
         }
-        
+
+
         isTransitioning = false;
     }
 
